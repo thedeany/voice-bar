@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder -mw --x64 --ia32"
   },
   "author": "Brandon Dean",
   "license": "ISC",
