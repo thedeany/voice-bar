@@ -20,15 +20,7 @@ function createWindow() {
     skipTaskbar: true,
   })
 
-  win.loadURL('https://voice.google.com/')
-
-  win.webContents.on("new-window", function (e, url, frameName, disposition, options) {
-    // allow the new window to be resized and moved if we're making a call
-    if (url.includes('hangouts')) {
-      options.frame = true;
-      options.resizable = true;
-    }
-  })
+  win.loadURL('https://hangouts.google.com/')
 
   win.on('blur', () => {
     if (!win.webContents.isDevToolsOpened()) {
