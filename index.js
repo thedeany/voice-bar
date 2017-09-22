@@ -18,6 +18,9 @@ function createWindow() {
     frame: false,
     resizable: false,
     skipTaskbar: true,
+    webPreferences: {
+      preload: __dirname + '/browser.js'
+    }
   })
 
   win.loadURL('https://hangouts.google.com/')
