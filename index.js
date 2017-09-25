@@ -40,7 +40,7 @@ function createWindow() {
 }
 
 function createTray() {
-  let icon = nativeImage.createFromDataURL(trayIcon)
+  let icon = nativeImage.createFromDataURL(process.platform === 'darwin' ? trayIcon : trayIconWhite)
   tray = new Tray(icon)
   tray.on('click', function (event) {
     toggleWindow()
@@ -109,3 +109,5 @@ app.on('activate', () => {
 })
 
 let trayIcon = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAATVJREFUSA3tlb1qAkEUhVdNYWUlWKZMZSFE0IeIrWVexj7EJ7QQSRHsBJOQ6P3WOTo7OnpBixQe2Ln/Z+be2dWiuOM/TmBqh/qyZxMedHxX4dWqIQS/9ohc8q+MHPsVT+WP5XepqYfCUZCxL3IVtdhw6A+WMyYPBTzthGvlUJz4FIgxAdBjUQcdDCe83TzCpw5aTnLSdMJLJW0lcCJdEj7pqVTs2ZRByMvp1K4oYETelskHdN0otbxOuMkicnYE6mZnVddzsWrmwarpkr8Pvota3zKGISunEy6/HW2wDgUe4R1RhXNuzBpTermy2Vy6R35QoA6WGE7kxhL7ofpk0QYLDCe8I5rFfO9m0DbItX8udqpmUrKF5SUQY3L7aYG+3tSfs/e/phCmSP8PeBve0qS7fbMJbAHCM3a4T4fXqwAAAABJRU5ErkJggg==`
+
+let trayIconWhite = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAADTSURBVDjLzZQxCsJAEEXfxiA2WgmWllYWFhZewtbSy9iLuYV38DAWIhZinajJtxgEE3Zl04gzsDDL/pk3M7BOtLOk5fufCjIKhCjIviqE1pJQqbdVQj57aCoSYNmo5QK5U1aQApMArGpRCcws78gr8NUZW4WBV1B67oaQ4Oh6BXMWjRP6Jgi12Gmc0AMnEOBqLdajWmcJcI9GqmxKeTRSDgidpMZu/ZuWLrbpWzTS1ZDO0UhHQ9pFI20M6QDwMcgqMNIne6tgnqmQJOXairC7//sEXi8fvZWlvsEjAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE3LTA5LTI1VDIyOjQ2OjEyKzAyOjAwok8anAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNy0wOS0yNVQyMjo0NjoxMiswMjowMNMSoiAAAAAASUVORK5CYII=`
