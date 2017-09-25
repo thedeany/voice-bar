@@ -13,7 +13,7 @@ let tray
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 720,
+    width: 800,
     height: 650,
     frame: false,
     resizable: false,
