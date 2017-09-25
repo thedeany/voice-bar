@@ -74,8 +74,8 @@ const showWindow = () => {
     x = Math.round(trayPos.x + (trayPos.width / 2) - (windowPos.width / 2))
     y = Math.round(trayPos.y + trayPos.height)
   } else {
-    x = Math.round(trayPos.x + (trayPos.width / 2) - (windowPos.width / 2))
-    y = Math.round(trayPos.y + trayPos.height * 10)
+    x = Math.round(trayPos.x - windowPos.width)
+    y = Math.round(trayPos.y - windowPos.height)
   }
 
   win.setPosition(x, y, false)
