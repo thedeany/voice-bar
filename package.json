@@ -12,7 +12,8 @@
     "start": "electron index.js",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=dist",
     "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"VoiceBar\"",
-    "package": "package-mac && package-win"
+    "package": "npm run package-mac && npm run package-win",
+    "create-installer-win": "node ./installers/windows/createInstaller.js"
   },
   "author": "Brandon Dean",
   "license": "ISC",
