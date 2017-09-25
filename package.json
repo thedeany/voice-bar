@@ -1,5 +1,6 @@
 {
   "name": "voice",
+  "productName": "VoiceBar",
   "version": "0.0.1",
   "description": "Electron wrapper for Google Voice to allow calling from the menubar",
   "build": {
@@ -8,12 +9,17 @@
   },
   "main": "index.js",
   "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder -mw --x64 --ia32"
+    "start": "electron index.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=dist",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=dist --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"VoiceBar\"",
+    "package": "package-mac && package-win"
   },
   "author": "Brandon Dean",
   "license": "ISC",
   "devDependencies": {
-    "electron-builder": "^19.27.7"
+    "electron-packager": "^9.1.0"
+  },
+  "dependencies": {
+    "electron": "^1.7.8"
   }
 }
